@@ -75,7 +75,7 @@ One of the most challenging parts of creating this calculator was ensuring that 
 
 ### Continued development
 
-I would like use Tailwind CSS to apply styles directly in the JSX using utility classes. This is what I aim to learn soon.
+I would like to use Tailwind CSS to apply styles directly in the JSX using utility classes. This is what I aim to learn soon.
 
 ### Useful resources
 
