@@ -48,30 +48,29 @@ Users should be able to:
 One of the most challenging parts of creating this calculator was ensuring that all elements were styled correctly and responsive to different screen sizes. I made the calculator responsive through a combination of Flexbox for centering, a maximum container width, CSS Grid for button layout and a media query to add a breakpoint in order to adjust the layout. I am also glad that I used React as it helped to manage the state and rendering of the calculations, allowing for efficient updates to the UI.
 
 ```css
-/* Incomplete values - reset button */
-.reset-btn.incomplete {
-  background-color: hsl(186, 14%, 43%);
-  color: hsl(183, 100%, 15%);
+/* Alert message and border */
+.alert-message {
+  color: red;
+  font-size: 1rem;
 }
 
-/* Completed values - reset button */
-.reset-btn.complete {
-  background-color: hsl(172, 67%, 45%);
-  color: hsl(183, 100%, 15%);
+.input-container .input-with-icon.alert {
+  border: 2px solid red;
 }
 ```
 
 ```js
-  // Reset input values and state
-  const handleReset = () => {
-    setBillAmount("");
-    setPeople("");
-    setTipPercentage("");
-    setCustomTip("");
-    setSelectedTip(null);
-    setShowAlert(false);
+  // Update the number of people with validation
+  const handlePeople = (event) => {
+    const peopleValue = event.target.value;
+    if (peopleValue <= 0) {
+      setShowAlert(true);
+      setPeople("");
+    } else {
+      setShowAlert(false);
+      setPeople(peopleValue);
+    }
   };
-
 ```
 
 ### Continued development
